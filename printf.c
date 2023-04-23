@@ -7,11 +7,14 @@
  */
 int _printf(const char *format, ...)
 {
-	int i;
-	int r_value = 0, sr_value = 0;
 	va_list ap;
 
 	va_start(ap, format);
+
+	int i;
+
+	int r_value = 0, sr_value = 0;
+	
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
@@ -26,14 +29,14 @@ int _printf(const char *format, ...)
 			i++;
 		}
 
-		else if (format[i] == '%' && format[i + 1] == 's')
+		else if (format[i + 1] == 's')
 		{
 			sr_value = put_s(va_arg(ap, char *));
 			i++;
 			r_value += (sr_value - 1);
 		}
 
-		else if (format[i] == '%' && format[i + 1] == '%')
+		else if (format[i + 1] == '%')
 		{
 			put_c('%');
 			i++;
