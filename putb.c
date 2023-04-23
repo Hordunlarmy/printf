@@ -5,7 +5,7 @@
  * @n: number checked
  * Return: binary unsigned int
  */
-int put_d(int n)
+int put_b(int n)
 {
 	unsigned int m, i;
 	unsigned int sum = 0;
@@ -14,7 +14,7 @@ int put_d(int n)
 	char j;
 
 	m = 2147483648;
-	num = n/m;
+	num = n / m;
 
 	for (i = 1; i < 32; i++)
 	{
