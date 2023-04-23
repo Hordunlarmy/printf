@@ -12,16 +12,13 @@ int _printf(const char *format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	for (i = 0; format && format[i] != '\0'; i++)
+	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
-		{
 			put_c(format[i]);
-		}
 
 		else if (format[i + 1] == 'c')
 		{
@@ -41,8 +38,10 @@ int _printf(const char *format, ...)
 			put_c('%');
 			i++;
 		}
-		r_value++;
+
+	r_value++;
 	}
+
 
 	va_end(ap);
 
