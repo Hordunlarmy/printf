@@ -12,22 +12,13 @@ int put_d(int n)
 	if (n == 0)
 		r_value += put_c('0');
 
-	else if (n < 0)
+	if(n < 0)
 	{
 		r_value += put_c('-');
-		if (n == INT_MIN)
-		{
-			r_value += put_d(INT_MAX / 10);
-			r_value += put_c(INT_MAX % 10 + '1');
-		}
-		else
-		{
-			n = -n;
-			r_value += put_d(n);
-		}
+		n = -n;
 	}
 
-	else if (n / 10)
+	if (n / 10)
 	{
 		r_value += put_d(n / 10);
 	}
