@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 
 		else
 		{
-			if (format[i + 1] == '\0')
+			if (format[i++] == '\0')
 				return (-1);
 			sr_value = spec_handle(ap, format[i + 1]);
 			if (sr_value == -1)
