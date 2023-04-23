@@ -14,8 +14,6 @@ int put_s(char *string)
 		put_c(string[i]);
 		r_value++;
 	}
-	put_c('\n');
-
 	return (r_value);
 
 }
