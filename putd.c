@@ -12,7 +12,12 @@ int put_d(int n)
 	if (n == 0)
 		r_value += put_c('0');
 
-	if(n < 0)
+	if (n == INT_MIN)
+	{
+		r_value += put_s("-2147483648");
+	}
+
+	if (n < 0)
 	{
 		r_value += put_c('-');
 		n = -n;
