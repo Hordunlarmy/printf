@@ -21,28 +21,32 @@ int _printf(const char *format, ...)
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
+		{
 			put_c(format[i]);
+			r_value++;
+		}
 
 		else if (format[i + 1] == 'c')
 		{
 			put_c(va_arg(ap, int));
+			r_value++;
 			i++;
 		}
 
 		else if (format[i + 1] == 's')
 		{
 			sr_value = put_s(va_arg(ap, char *));
+			r_value += sr_value;
 			i++;
-			r_value += (sr_value - 1);
 		}
 
 		else if (format[i + 1] == '%')
 		{
 			put_c('%');
+			r_value ++;
 			i++;
 		}
 
-	r_value++;
 	}
 
 
