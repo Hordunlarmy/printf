@@ -7,33 +7,25 @@
  */
 int put_d(int n)
 {
-	unsigned int m;
 	int r_value = 0;
-	long int rev = 1;
 
 	if (n < 0)
 	{
 		r_value += put_c('-');
-		m = n * -1;
+		n = -n;
 	}
-	m = n;
 
 	if (n == 0)
 	{
 		put_c('0');
 	}
 
-	while (m > 0)
+	if (n / 10)
 	{
-		rev = (rev * 10) + (m % 10);
-		m /= 10;
+		r_value += put_d(n / 10);
 	}
 
-	while (rev > 1)
-	{
-		r_value += put_c(rev % 10 + '0');
-		rev /= 10;
-	}
+	r_value += put_c(n % 10 + '0');
 
 	return (r_value);
 }
