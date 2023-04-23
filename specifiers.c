@@ -22,7 +22,7 @@ int spec_handle(va_list ap, char specifier)
 			r_value += put_s(va_arg(ap, char *));
 			break;
 		case 'b':
-			r_value += put_b(va_arg(ap, int);
+			r_value += put_b(va_arg(ap, int));
 			break;
 		case 'd':
 		case 'i':

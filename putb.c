@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * put_d - Entry point
+ * put_b - Entry point
  * @n: number checked
  * Return: binary unsigned int
  */
@@ -14,7 +14,7 @@ int put_b(int n)
 	char j;
 
 	m = 2147483648;
-	num = n / m;
+	*(num + 0) = n / m;
 
 	for (i = 1; i < 32; i++)
 	{
