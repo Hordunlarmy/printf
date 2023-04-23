@@ -7,28 +7,31 @@
  */
 int put_d(int n)
 {
-	int r_value = 0;
-
-	if (n == 0)
-		r_value += put_c('0');
-
-	if (n == INT_MIN)
-	{
-		r_value += put_s("-2147483648");
-	}
+	unsigned int x, y, i;
+	unsigned int r_value = 0;
 
 	if (n < 0)
 	{
+		x = (n * -1);
 		r_value += put_c('-');
-		n = -n;
 	}
+	else
+		 x = n;
 
-	if (n / 10)
+	y = x;
+	i = 1;
+
+	while (y > 9)
 	{
-		r_value += put_d(n / 10);
+		y /= 10;
+		i *= 10;
 	}
-
-	r_value += put_c(n % 10 + '0');
+	while (i >= 1)
+	{
+		r_value += put_c((x / i) % 10 + '0');
+		i /= 10;
+	}
 
 	return (r_value);
+
 }
