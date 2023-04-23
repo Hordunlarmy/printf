@@ -24,24 +24,12 @@ int _printf(const char *format, ...)
 			r_value++;
 		}
 
-		else if (format[i + 1] == 'c')
+		else
 		{
-			put_c(va_arg(ap, int));
-			r_value++;
-			i++;
-		}
-
-		else if (format[i + 1] == 's')
-		{
-			sr_value = put_s(va_arg(ap, char *));
+			sr_value = spec_handle(ap, format[i + 1]);
+			if (sr_value == -1)
+				return (-1);
 			r_value += sr_value;
-			i++;
-		}
-
-		else if (format[i + 1] == '%')
-		{
-			put_c('%');
-			r_value++;
 			i++;
 		}
 
