@@ -17,7 +17,7 @@ int put_d(int n)
 
 	if (n == 0)
 	{
-		put_c('0');
+		r_value += put_c('0');
 	}
 
 	if (n / 10)
