@@ -11,7 +11,7 @@ int put_s(char *string)
 
 	if (string == NULL)
 		return (-1);
-	
+
 	for (i = 0; string[i] != '\0'; i++)
 	{
 		put_c(string[i]);

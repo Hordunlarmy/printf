@@ -13,12 +13,10 @@ int spec_handle(va_list ap, char specifier)
 	switch (specifier)
 	{
 		case '%':
-			put_c('%');
-			r_value++;
+			r_value += put_c('%');
 			break;
 		case 'c':
-			put_c(va_arg(ap, int));
-			r_value++;
+			r_value += put_c(va_arg(ap, int));
 			break;
 		case 's':
 			r_value += put_s(va_arg(ap, char *));
