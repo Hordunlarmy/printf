@@ -7,8 +7,5 @@
  */
 int put_c(char c)
 {
-	int output;
-
-	output = (write(1, &c, 1));
-	return (output);
+	return (write(1, &c, 1));
 }
