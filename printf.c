@@ -8,13 +8,11 @@
 int _printf(const char *format, ...)
 {
 	va_list ap;
+	int i;
+	int r_value = 0, sr_value = 0;
 
 	va_start(ap, format);
 
-	int i;
-
-	int r_value = 0, sr_value = 0;
-	
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
@@ -44,8 +42,6 @@ int _printf(const char *format, ...)
 
 	r_value++;
 	}
-
-
 	va_end(ap);
 
 	return (r_value);
