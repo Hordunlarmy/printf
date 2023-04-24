@@ -31,7 +31,6 @@ int main(void)
 
 	put_c(t);
 	put_c('\n');
-	put_s(name);
 
 	return (0);
 }

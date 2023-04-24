@@ -6,45 +6,33 @@
  * @ap: arguement parameter
  * Return: success
  */
+typedef int (*put_func_t)(va_list ap);
+
 int spec_handle(va_list ap, char specifier)
 {
-	int r_value = 0;
+	static put_func_t dispatch_table[128] = { 0 };
+	put_func_t func = dispatch_table[(int)specifier];
 
-	switch (specifier)
+	if (!dispatch_table['%'])
 	{
-		case '%':
-			r_value += put_c('%');
-			break;
-		case 'c':
-			r_value += put_c(va_arg(ap, int));
-			break;
-		case 's':
-			r_value += put_s(va_arg(ap, char *));
-			break;
-		case 'b':
-			r_value += put_b(va_arg(ap, int));
-			break;
-			case 'u':
-			r_value += put_u(va_arg(ap, unsigned int));
-			break;
-			case 'o':
-			r_value += put_o(va_arg(ap, unsigned int));
-			break;
-			case 'x':
-			r_value += put_x(va_arg(ap, unsigned int));
-			break;
-			case 'X':
-			r_value += put_X(va_arg(ap, unsigned int));
-			break;
-		case 'd':
-		case 'i':
-			r_value += put_d(va_arg(ap, int));
-			break;
-		default:
-			put_c('%');
-			put_c(specifier);
-			r_value += 2;
-				break;
+		dispatch_table['%'] = put_chr;
+		dispatch_table['c'] = put_chr;
+		dispatch_table['s'] = put_s;
+		dispatch_table['b'] = put_b;
+		dispatch_table['u'] = put_u;
+		dispatch_table['o'] = put_o;
+		dispatch_table['x'] = put_x;
+		dispatch_table['X'] = put_X;
+		dispatch_table['p'] = put_p;
+		dispatch_table['d'] = put_d;
+		dispatch_table['i'] = put_d;
 	}
-	return (r_value);
+
+	if (!func)
+	{
+		put_c('%');
+		put_c(specifier);
+		return (2);
+	}
+	return (func(ap));
 }

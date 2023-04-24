@@ -2,11 +2,12 @@
 
 /**
  * put_d - Entry point
- * @n: number to be printed
+ * @ap: argument passed
  * Return: a number
  */
-int put_d(int n)
+int put_d(va_list ap)
 {
+	int n = va_arg(ap, int);
 	unsigned int x, y, i;
 	unsigned int r_value = 0;
 
