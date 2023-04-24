@@ -24,16 +24,16 @@ int spec_handle(va_list ap, char specifier)
 		case 'b':
 			r_value += put_b(va_arg(ap, int));
 			break;
-		case 'u':
+			case 'u':
 			r_value += put_u(va_arg(ap, unsigned int));
 			break;
-		case 'o':
+			case 'o':
 			r_value += put_o(va_arg(ap, unsigned int));
 			break;
-		case 'x':
+			case 'x':
 			r_value += put_x(va_arg(ap, unsigned int));
 			break;
-		case 'X':
+			case 'X':
 			r_value += put_X(va_arg(ap, unsigned int));
 			break;
 		case 'd':
