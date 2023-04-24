@@ -1,25 +1,28 @@
 #include "main.h"
 
 /**
-  * put_o - Entry point
-  * @n: number being checked
-  * Return: an octal number
+ * put_o - Entry point
+ * @n: number being checked
+ * Return: an octal number
  */
 int put_o(unsigned int n)
 {
-	int i, j, r_value = 0;
-	char octal[32];
+	static char buffer[1024];
+	char *p = &buffer[1023];
+	static const char  oct[] = "0123456789ABCDEF";
+	int r_value = 0;
 
-	for (i = 0; n > 0; i++)
-	{
-		*(octal + i) = n % 8 + '0';
+	*p = '\0';
+
+	do {
+		*--p = oct[n % 8];
 		n /= 8;
-	}
+	} while (n != 0);
 
-	for (j = i - 1; j >= 0; j--)
+	while (*p != '\0')
 	{
-		r_value += put_c(*(octal + j));
+		r_value += put_c(*p);
+		p++;
 	}
 
 	return (r_value);
-}
