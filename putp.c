@@ -8,7 +8,7 @@
 int put_p(void *ptr)
 {
 	char buffer[1024];
-	size_t i, r;
+	size_t i;
 	int r_value;
 
 	r_value = snprintf(buffer, sizeof(buffer), "%p", ptr);
@@ -18,13 +18,7 @@ int put_p(void *ptr)
 	}
 
 	for (i = 0; i < (size_t)r_value; i++)
-	{
-		r = putchar(buffer[i]);
-		if (r < 0)
-		{
-			return (-1);
-		}
-	}
+		putchar(buffer[i]);
 
 	return (r_value);
 }
