@@ -26,3 +26,4 @@ int put_o(unsigned int n)
 	}
 
 	return (r_value);
+}
