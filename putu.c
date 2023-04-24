@@ -1,6 +1,10 @@
 #include "main.h"
 
-
+/**
+  * put_u - Entry point
+  * @n: number being checked
+  * Return: an unsigned int
+ */
 int put_u(unsigned int n)
 {
 	unsigned int m = 1000000000;

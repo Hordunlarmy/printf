@@ -31,10 +31,10 @@ int spec_handle(va_list ap, char specifier)
 			r_value += put_o(va_arg(ap, unsigned int));
 			break;
 		case 'x':
-			r_value += put_x(var_arg(ap, unsigned int));
+			r_value += put_x(va_arg(ap, unsigned int));
 			break;
 		case 'X':
-			r_value += put_X(var_arg(ap, unsigned int));
+			r_value += put_X(va_arg(ap, unsigned int));
 			break;
 		case 'd':
 		case 'i':
