@@ -2,12 +2,11 @@
 
 /**
  * put_x - Entry point
- * @ap: argument passed
+ * @n: number being checked
  * Return: a lower hex number
  */
-int put_x(va_list ap)
+int put_x(unsigned int n)
 {
-	unsigned int n = va_arg(ap, unsigned int);
 	static char buffer[1024];
 	char *p = &buffer[1023];
 	static const char  hex[] = "0123456789abcdef";
@@ -32,12 +31,11 @@ int put_x(va_list ap)
 
 /**
  * put_X - Entry point
- * @ap: argument passed
+ * @n: number being checked
  * Return: a lower hex number
  */
-int put_X(va_list ap)
+int put_X(unsigned int n)
 {
-	unsigned int n = va_arg(ap, unsigned int);
 	static char buffer[1024];
 	char *p = &buffer[1023];
 	static const char  hex[] = "0123456789ABCDEF";

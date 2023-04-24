@@ -2,12 +2,11 @@
 
 /**
  * put_s - Entry point
- * @ap: argument pararmeter
+ * @string: pointer to string
  * Return: a string
  */
-int put_s(va_list ap)
+int put_s(char *string)
 {
-	char *string = va_arg(ap, char *);
 	int i, r_value = 0;
 
 	if (!string)
@@ -15,7 +14,8 @@ int put_s(va_list ap)
 
 	for (i = 0; string[i] != '\0'; i++)
 	{
-		r_value += put_c(string[i]);
+		put_c(string[i]);
+		r_value++;
 	}
 
 	return (r_value);

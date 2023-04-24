@@ -7,16 +7,15 @@
 
 int _printf(const char *format, ...);
 int put_c(char c);
-int put_chr(va_list ap);
-int put_s(va_list ap);
-int put_d(va_list ap);
-int put_b(va_list ap);
-int put_u(va_list ap);
-int put_o(va_list ap);
-int put_x(va_list ap);
-int put_X(va_list ap);
-int put_p(va_list ap);
+int put_s(char *string);
+int put_d(int n);
+int put_b(int n);
 int spec_handle(va_list ap, char specifier);
+int put_u(unsigned int n);
+int put_o(unsigned int n);
+int put_x(unsigned int n);
+int put_X(unsigned int n);
+int put_p(void *ptr);
 
 
 

@@ -2,12 +2,11 @@
 
 /**
  * put_o - Entry point
- * @ap: argument passed
+ * @n: number being checked
  * Return: an octal number
  */
-int put_o(va_list ap)
+int put_o(unsigned int n)
 {
-	unsigned int n = va_arg(ap, unsigned int);
 	static char buffer[1024];
 	char *p = &buffer[1023];
 	static const char  oct[] = "0123456789ABCDEF";

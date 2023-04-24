@@ -2,12 +2,11 @@
 
 /**
   * put_u - Entry point
-  * @ap: argument passed
+  * @n: number being checked
   * Return: an unsigned int
  */
-int put_u(va_list ap)
+int put_u(unsigned int n)
 {
-	unsigned int n = va_arg(ap, unsigned int);
 	unsigned int m = 1000000000;
 	int num[10];
 	int i, r_value = 0;

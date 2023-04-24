@@ -2,12 +2,11 @@
 
 /**
  * put_b - Entry point
- * @ap: argument passed
+ * @n: number checked
  * Return: binary unsigned int
  */
-int put_b(va_list ap)
+int put_b(int n)
 {
-	int n = va_arg(ap, int);
 	unsigned int m, i;
 	unsigned int sum = 0;
 	unsigned int num[32];
