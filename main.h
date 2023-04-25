@@ -6,7 +6,9 @@
 #include <limits.h>
 
 typedef int (*put_func_t)(va_list);
-typedef struct {
+
+typedef struct
+{
 	char specifier;
 	put_func_t func;
 } handler_t;
