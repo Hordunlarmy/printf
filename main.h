@@ -1,10 +1,17 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/**
+ * all c standard function used
+ */ 
 #include <stdio.h>
+#include <unistd.h>
 #include <stdarg.h>
 #include <limits.h>
 
+/**
+ * all prototypes of functions used declared here
+ */
 int _printf(const char *format, ...);
 int put_c(char c);
 int put_s(char *string);
