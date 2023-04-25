@@ -7,26 +7,38 @@
  */
 int put_u(unsigned int n)
 {
-	unsigned int m = 1000000000;
-	int num[10];
-	char c;
-	int i, r_value = 0;
+	int num, div = n % 10, digit, exp = 1;
+	int r_value = 1;
 
-	for (i = 0; i < 10; i++)
+	n = n / 10;
+	num = n;
+
+	if (div < 0)
 	{
-		*(num + i) = n / m;
-		n %= m;
-		m /= 10;
+		put_c('-');
+		num = -num;
+		n = -n;
+		div = -div;
+		r_value++;
 	}
-
-	for (i = 0; i < 10; i++)
+	if (num > 0)
 	{
-		if (*(num + i) != 0 || i == 9)
+		while (num / 10 != 0)
 		{
-			c = *(num + i) + '0';
-			r_value += put_c(c);
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			put_c(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			r_value++;
 		}
 	}
+	put_c(div + '0');
 
 	return (r_value);
 }
