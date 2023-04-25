@@ -22,7 +22,7 @@ int main(void)
 
 	printf("MY FUNTION\n....................\n");
 
-	r_value2 = _printf("%%Tosin\n");
+	r_value2 = _printf("%%%%Tosin\n");
 	_printf("%c\n", t);
 	r_value3 = _printf("%s\n", name);
 	_printf("r value is %d\n", r_value2);

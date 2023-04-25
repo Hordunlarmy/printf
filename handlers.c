@@ -4,16 +4,16 @@
   * handle_percent - Entry point
   * @ap: argument passed
   * Return: a function
-  */
+ */
 int handle_percent(va_list ap)
 {
-	char *string = "%";
+	int r_value = 0;
+	char c = va_arg(ap, int);
 
-	if (va_arg(ap, int) == *string)
-	{
-		return (*string);
-	}
-	return (put_c(*string));
+	c = '%';
+	r_value = put_c(c);
+
+	return (r_value);
 }
 
 /**
