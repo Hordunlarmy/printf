@@ -2,7 +2,7 @@
 
 /**
  *  put_c - Entry point
- *  @c: charater
+ *  @c: charater to
  *  Return: character
  */
 int put_c(char c)
