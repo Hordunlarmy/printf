@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			{
 				sr_value = spec_handle1(ap, format[i + 1]);
 			}
-			else if (format[i + 1] == 'b' || format[i + 1] == 'u' ||
+			if (format[i + 1] == 'b' || format[i + 1] == 'u' ||
 					format[i + 1] == 'o' || format[i + 1] == 'x' || format[i + 1] == 'X')
 			{
 				sr_value = spec_handle2(ap, format[i + 1]);
