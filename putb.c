@@ -2,7 +2,7 @@
 
 /**
  * put_b - Entry point
- * @n: number checked
+ * @n: number being checked
  * Return: binary unsigned int
  */
 int put_b(int n)
