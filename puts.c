@@ -45,7 +45,7 @@ int put_S(char *string)
 			if (c < 16)
 				r_value += put_c('0');
 
-			r_value = r_value + put_X(cast);
+			r_value = r_value + put_X(c);
 		}
 		else
 			r_value += *(string + i);
