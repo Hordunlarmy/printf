@@ -10,6 +10,8 @@ int spec_handle(va_list ap, char specifier)
 {
 	int r_value = 0;
 
+	if (specifier == '\0')
+		return (-1);
 	if (specifier == '%')
 		r_value += put_c('%');
 	else if (specifier == 'c')
