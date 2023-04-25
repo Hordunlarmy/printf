@@ -10,6 +10,7 @@ int put_c(char c);
 int put_s(char *string);
 int put_d(int n);
 int put_b(int n);
+int spec_handle(va_list ap, char specifier);
 int spec_handle1(va_list ap, char specifier);
 int spec_handle2(va_list ap, char specifier);
 int put_u(unsigned int n);
