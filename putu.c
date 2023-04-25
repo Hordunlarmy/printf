@@ -21,7 +21,10 @@ int put_u(unsigned int n)
 	for (i = 0; i < 10; i++)
 	{
 		if (*(num + i) != 0 || i == 9)
-			r_value += put_c(*(num + i) + '0');
+		{
+			c = *(num + i) + '0';
+			r_value += put_c(c);
+		}
 	}
 
 	return (r_value);

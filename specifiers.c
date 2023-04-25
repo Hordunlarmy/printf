@@ -24,8 +24,10 @@ int spec_handle(va_list ap, char specifier)
 		r_value += put_u(va_arg(ap, unsigned int));
 	else if (specifier == 'o')
 		r_value += put_o(va_arg(ap, unsigned int));
-	else if (specifier == 'x' || specifier == 'X')
+	else if (specifier == 'x')
 		r_value += put_x(va_arg(ap, unsigned int));
+	else if (specifier == 'X')
+		r_value += put_X(va_arg(ap, unsigned int));
 	else if (specifier == 'd' || specifier == 'i')
 		r_value += put_d(va_arg(ap, int));
 	else
