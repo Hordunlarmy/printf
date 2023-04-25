@@ -13,8 +13,10 @@ int put_p(void *ptr)
 	sprintf(buffer, "%p", ptr);
 
 	for (i = 0; buffer[i] != '\0'; i++)
-		r_value = put_c(buffer[i]);
-
+	{
+		put_c(buffer[i]);
+		r_value++;
+	}
 	return (r_value);
 
 }
