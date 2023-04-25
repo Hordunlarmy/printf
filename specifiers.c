@@ -10,41 +10,27 @@ int spec_handle(va_list ap, char specifier)
 {
 	int r_value = 0;
 
-	switch (specifier)
+	if (specifier == '%')
+		r_value += put_c('%');
+	else if (specifier == 'c')
+		r_value += put_c(va_arg(ap, int));
+	else if (specifier == 's')
+		r_value += put_s(va_arg(ap, char *));
+	else if (specifier == 'b')
+		r_value += put_b(va_arg(ap, int));
+	else if (specifier == 'u')
+		r_value += put_u(va_arg(ap, unsigned int));
+	else if (specifier == 'o')
+		r_value += put_o(va_arg(ap, unsigned int));
+	else if (specifier == 'x' || specifier == 'X')
+		r_value += put_x(va_arg(ap, unsigned int));
+	else if (specifier == 'd' || specifier == 'i')
+		r_value += put_d(va_arg(ap, int));
+	else
 	{
-		case '%':
-			r_value += put_c('%');
-			break;
-		case 'c':
-			r_value += put_c(va_arg(ap, int));
-			break;
-		case 's':
-			r_value += put_s(va_arg(ap, char *));
-			break;
-		case 'b':
-			r_value += put_b(va_arg(ap, int));
-			break;
-			case 'u':
-			r_value += put_u(va_arg(ap, unsigned int));
-			break;
-			case 'o':
-			r_value += put_o(va_arg(ap, unsigned int));
-			break;
-			case 'x':
-			r_value += put_x(va_arg(ap, unsigned int));
-			break;
-			case 'X':
-			r_value += put_X(va_arg(ap, unsigned int));
-			break;
-		case 'd':
-		case 'i':
-			r_value += put_d(va_arg(ap, int));
-			break;
-		default:
-			put_c('%');
-			put_c(specifier);
-			r_value += 2;
-				break;
+		r_value += put_c('%');
+		r_value += put_c(specifier);
+		r_value += 2;
 	}
 	return (r_value);
 }
