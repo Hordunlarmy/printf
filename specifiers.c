@@ -32,6 +32,8 @@ int spec_handle(va_list ap, char specifier)
 		r_value += put_S(va_arg(ap, char *));
 	else if (specifier == 'r')
 		r_value += put_r(va_arg(ap, char *));
+	else if (specifier == 'R')
+		r_value += put_R(va_arg(ap, char *));
 	else if (specifier == 'p')
 		r_value += put_p(va_arg(ap, void *));
 	else if (specifier == 'd' || specifier == 'i')

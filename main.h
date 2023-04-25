@@ -22,6 +22,7 @@ int put_X(unsigned int n);
 int put_S(char *string);
 int put_p(void *ptr);
 int put_r(char *string);
+int put_R(char *string);
 
 
 #endif /* MAIN_H */
