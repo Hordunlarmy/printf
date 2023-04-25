@@ -9,6 +9,7 @@ int put_u(unsigned int n)
 {
 	unsigned int m = 1000000000;
 	int num[10];
+	char c;
 	int i, r_value = 0;
 
 	for (i = 0; i < 10; i++)
