@@ -7,23 +7,14 @@
  */
 int put_p(void *ptr)
 {
-	char *string = "(nil)";
-	long int hex;
-	int i, r_value;
+	char buffer[1024];
+	int i, r_value = 0;
 
-	if (ptr == NULL)
-	{
-		for (i = 0; string[i] != '\0'; i++)
-		{
-			put_c(string[i]);
-		}
-		return (i);
-	}
+	sprintf(buffer, "%p", ptr);
 
-	hex = (unsigned long int)ptr;
-	put_c('0');
-	put_c('x');
-	r_value = put_X(hex);
+	for (i = 0; buffer[i] != '\0'; i++)
+		r_value = put_c(buffer[i]);
 
-	return (r_value + 2);
+	return (r_value);
+
 }
