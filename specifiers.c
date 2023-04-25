@@ -20,6 +20,7 @@ int spec_handle(va_list ap, char specifier)
 		{'i', handle_decimal},
 		{'x', handle_hex},
 		{'X', handle_hex_upper},
+		{'S', handle_string_upper},
 	};
 
 	for (i = 0; i < sizeof(handlers) / sizeof(handler_t); i++)
