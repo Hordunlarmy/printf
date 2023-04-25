@@ -17,7 +17,7 @@ int put_u(unsigned int n);
 int put_o(unsigned int n);
 int put_x(unsigned int n);
 int put_X(unsigned int n);
-int put_S(va_list ap);
+int put_S(char *string);
 
 
 #endif /* MAIN_H */

@@ -24,13 +24,12 @@ int put_s(char *string)
 
 /**
  * put_S - Entry point
- * @ap: argument passed
+ * @string: argument passed
  * Return: a custom string
  */
-int put_S(va_list ap)
+int put_S(char *string)
 {
 	int i, r_value = 0;
-	char *string = va_arg(ap, char *);
 
 	if (string == NULL)
 	{
