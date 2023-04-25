@@ -21,6 +21,7 @@ int spec_handle(va_list ap, char specifier)
 		{'x', handle_hex},
 		{'X', handle_hex_upper},
 		{'S', handle_string_upper},
+		{'p', handle_pointer},
 	};
 
 	for (i = 0; i < sizeof(handlers) / sizeof(handler_t); i++)

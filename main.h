@@ -35,5 +35,6 @@ int handle_hex(va_list ap);
 int handle_hex_upper(va_list ap);
 int handle_decimal(va_list ap);
 int handle_string_upper(va_list ap);
+int handle_pointer(va_list ap);
 
 #endif /* MAIN_H */

@@ -39,3 +39,13 @@ int handle_decimal(va_list ap)
 {
 	return (put_d(va_arg(ap, int)));
 }
+
+/**
+  * handle_pointer - Entry point
+  * @ap: argument passed
+  * Return: a function
+ */
+int handle_pointer(va_list ap)
+{
+	return (put_p(va_arg(ap, void *)));
+}
