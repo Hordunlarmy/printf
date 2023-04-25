@@ -1,57 +1,48 @@
 #include "main.h"
 
-/**
-  * handle_percent - Entry point
-  * @ap: argument passed
-  * Return: a function
- */
-int handle_percent(va_list ap)
+int handle_default(char specifier)
 {
-	int r_value = 0;
-	char c = va_arg(ap, int);
-
-	c = '%';
-	r_value = put_c(c);
-
-	return (r_value);
+	put_c('%');
+	put_c(specifier);
+	return (2);
 }
 
-/**
- * handle_char - Entry point
- * @ap: argument passed
- * Return: a function
- */
 int handle_char(va_list ap)
 {
 	return (put_c(va_arg(ap, int)));
 }
 
-/**
- * handle_string - Entry point
- * @ap: argument passed
- * Return: a function
- */
 int handle_string(va_list ap)
 {
 	return (put_s(va_arg(ap, char *)));
 }
 
-/**
- * handle_binary - Entry point
- * @ap: argument passed
- * Return: a function
- */
 int handle_binary(va_list ap)
 {
 	return (put_b(va_arg(ap, int)));
 }
 
-/**
- * handle_unsigned - Entry point
- * @ap: argument passed
- * Return: a function
- */
 int handle_unsigned(va_list ap)
 {
 	return (put_u(va_arg(ap, unsigned int)));
+}
+
+int handle_octal(va_list ap)
+{
+	return (put_o(va_arg(ap, unsigned int)));
+}
+
+int handle_hex(va_list ap)
+{
+	return (put_x(va_arg(ap, unsigned int)));
+}
+
+int handle_hex_upper(va_list ap)
+{
+	return (put_X(va_arg(ap, unsigned int)));
+}
+
+int handle_decimal(va_list ap)
+{
+	return (put_d(va_arg(ap, int)));
 }
