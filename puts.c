@@ -23,7 +23,7 @@ int put_s(char *string)
 
 
 /**
- * handle_s_upper - Entry point
+ * handle_string_upper - Entry point
  * @ap: argument passed
  * Return: a custom string
  */
@@ -31,6 +31,7 @@ int handle_string_upper(va_list ap)
 {
 	int i, r_value = 0;
 	char *string = va_arg(ap, char *);
+
 	if (string == NULL)
 	{
 		return (put_s("(null)"));
@@ -44,7 +45,7 @@ int handle_string_upper(va_list ap)
 		else
 		{
 			r_value += put_s("\\x");
-			r_value += put_x((unsigned char) string[i], 2, 'A');
+			r_value += put_x((unsigned int)string[i]);
 		}
 	}
 	return (r_value);
