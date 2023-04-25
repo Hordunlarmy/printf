@@ -7,13 +7,7 @@
   */
 int handle_percent(va_list ap)
 {
-	char *string = "%";
-
-	if (va_arg(ap, int) == *string)
-	{
-		return (*string);
-	}
-	return (put_c(*string));
+	return (put_c('%'));
 }
 
 /**
