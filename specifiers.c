@@ -28,6 +28,8 @@ int spec_handle(va_list ap, char specifier)
 		r_value += put_x(va_arg(ap, unsigned int));
 	else if (specifier == 'X')
 		r_value += put_X(va_arg(ap, unsigned int));
+	else if (specifier += 'S')
+		r_value += put_S(va_arg(ap, char *));
 	else if (specifier == 'd' || specifier == 'i')
 		r_value += put_d(va_arg(ap, int));
 	else
