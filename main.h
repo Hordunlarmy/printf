@@ -1,22 +1,19 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-/**
- * all c standard function used
- */ 
+/* all c standard function used */
 #include <stdio.h>
 #include <unistd.h>
 #include <stdarg.h>
 #include <limits.h>
 
-/**
- * all prototypes of functions used declared here
- */
+/* all prototypes of functions used declared here */
 int _printf(const char *format, ...);
 int put_c(char c);
 int put_s(char *string);
 int put_d(int n);
 int put_b(int n);
+int str_len(char *s);
 int spec_handle(va_list ap, char specifier);
 int put_u(unsigned int n);
 int put_o(unsigned int n);
