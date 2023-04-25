@@ -7,18 +7,23 @@
  */
 int put_p(void *ptr)
 {
-	char buffer[1024];
-	size_t i;
-	int r_value;
+	char *string = "(nil)";
+	long int hex;
+	int i, r_value;
 
-	r_value = snprintf(buffer, sizeof(buffer), "%p", ptr);
-	if (r_value < 0 || (size_t)r_value >= sizeof(buffer))
+	if (ptr == NULL)
 	{
-		return (-1);
+		for (i = 0; string[i] != '\0'; i++)
+		{
+			put_c(string[i]);
+		}
+		return (i);
 	}
 
-	for (i = 0; i < (size_t)r_value; i++)
-		putchar(buffer[i]);
+	hex = (unsigned long int)ptr;
+	put_c('0');
+	put_c('x');
+	r_value = put_X(hex);
 
-	return (r_value);
+	return (r_value + 2);
 }
