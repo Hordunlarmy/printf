@@ -30,8 +30,8 @@ int spec_handle(va_list ap, char specifier)
 		r_value += put_d(va_arg(ap, int));
 	else
 	{
-		r_value += put_c('%');
-		r_value += put_c(specifier);
+		put_c('%');
+		put_c(specifier);
 		r_value += 2;
 	}
 	return (r_value);
